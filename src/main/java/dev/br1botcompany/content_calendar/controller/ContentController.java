@@ -16,9 +16,9 @@ import java.util.Optional;
 @CrossOrigin
 public class ContentController {
 
-//    private final ContentCollectionRepository repository;
+    private final ContentCollectionRepository repository;
 
-    private final ContentJdbcTemplateRepository repository;
+
 
     public ContentController(ContentCollectionRepository repository) {
         this.repository = repository;
