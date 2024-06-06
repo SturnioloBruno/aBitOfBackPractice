@@ -1,18 +1,20 @@
 package dev.br1botcompany.content_calendar.model;
 
 import jakarta.validation.constraints.NotBlank;
+import org.springframework.data.annotation.Id;
 
 import java.time.LocalDateTime;
 
 public record Content(
+        @Id
         Integer id,
         @NotBlank
         String title,
         String desc,
         Status status,
-        Type type,
+        Type contentType,
         LocalDateTime dateCreated,
-        LocalDateTime dateUpdate,
+        LocalDateTime dateUpdated,
         String url
 ) {
 }
