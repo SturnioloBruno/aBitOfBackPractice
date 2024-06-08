@@ -1,7 +1,6 @@
 package dev.br1botcompany.content_calendar.controller;
 
 import dev.br1botcompany.content_calendar.model.Content;
-import dev.br1botcompany.content_calendar.model.Status;
 import dev.br1botcompany.content_calendar.repository.ContentRepository;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
@@ -54,13 +53,8 @@ public class ContentController {
         repository.deleteById(id);
     }
 
-    @GetMapping("/filter/{keyword}")
-    public List<Content> findByTitle(@PathVariable String keyword) {
-        return repository.findAllByTitleContains(keyword);
-    }
-
-    @GetMapping("filter/status/{status}")
-    public List<Content> findByStatus(@PathVariable Status status) {
-        return repository.listByStatus(status);
+    @GetMapping("/filter/type/{type}")
+    public List<Content> filterByType(@PathVariable String type) {
+        return repository.findAllByContentType(type.toUpperCase());
     }
 }
