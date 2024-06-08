@@ -1,3 +1,4 @@
+/*
 package dev.br1botcompany.content_calendar.repository;
 
 import dev.br1botcompany.content_calendar.model.Content;
@@ -55,3 +56,4 @@ public class ContentCollectionRepository {
         contentList.removeIf(c -> c.id().equals(id));
     }
 }
+*/
