@@ -1,6 +1,6 @@
 package dev.br1botcompany.content_calendar.controller;
 
-import org.springframework.beans.factory.annotation.Value;
+import dev.br1botcompany.content_calendar.config.ContentCalendarProperties;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -9,14 +9,14 @@ import java.util.Map;
 @RestController
 public class HomeController {
 
-    @Value("${cc.welcomeMessage: Default Welcome Message}")
-    private String welcomeMessage;
+    private final ContentCalendarProperties properties;
 
-    @Value("${cc.about}")
-    private String about;
+    public HomeController(ContentCalendarProperties properties) {
+        this.properties = properties;
+    }
 
     @GetMapping("/")
-    public Map<String, String> home() {
-        return Map.of("welcomeMessage", welcomeMessage, "about", about);
+    public ContentCalendarProperties home() {
+        return properties;
     }
 }
