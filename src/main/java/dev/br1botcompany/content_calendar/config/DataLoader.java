@@ -11,7 +11,6 @@ import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 
-@Profile("!dev")
 @Component
 public class DataLoader implements CommandLineRunner {
 
