@@ -6,10 +6,12 @@ import dev.br1botcompany.content_calendar.model.Status;
 import dev.br1botcompany.content_calendar.model.Type;
 import dev.br1botcompany.content_calendar.repository.ContentRepository;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 
+@Profile("!dev")
 @Component
 public class DataLoader implements CommandLineRunner {
 
